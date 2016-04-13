@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+@include rem-fallback(${1:property}, ${2:values});
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>remf</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <!-- <scope>source.python</scope> -->
+</snippet>
