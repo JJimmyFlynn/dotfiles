@@ -10,6 +10,8 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin"
 
 # Git
 alias goops="git add --all && git commit -m \"Minor fix for last commit\""
+alias gpa="git push bb && git push bs"
+alias gch="git checkout"
 
 function gac {
     git add --all
@@ -27,10 +29,8 @@ alias sites='cd ~/sites'
 alias desk='cd ~/Desktop'
 alias hs='cd ~/sites/homestead'
 alias osgoode="cd ~/sites/Osgoode_Marley"
-alias binky="cd /Users/JFlynn/sites/Homestead/projects/binky_lulu/htdocs/content/themes/binky_lulu"
 alias dpc="cd /Users/JFlynn/sites/Homestead/projects/dpc"
-alias soap='cd ~/sites/Soapwalla'
-alias buckleys='cd /Users/JFlynn/sites/Homestead/projects/buckley_bakery/web/app/themes/buckleys_bakery'
+alias harris="cd /Users/JFlynn/sites/Harrisville"
 
 # Servers
 alias raiden='ssh hostmaster@raiden.catchfirecreative.net -p 2222'
@@ -43,4 +43,6 @@ alias jax='ssh hostmaster@jax.catchfirecreative.net'
 alias kitana='ssh hostmaster@kitana.catchfirecreative.net -p 2222'
 
 # Homestead
-alias homestead='function __homestead() { (cd /Users/JFlynn/sites/Homestead && vagrant $*); unset -f __homestead; }; __homestead'
+alias homestead='function __homestead() { (cd /Users/JFlynn/Homestead && vagrant $*); unset -f __homestead; }; __homestead'
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
