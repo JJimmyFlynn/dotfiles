@@ -10,7 +10,6 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/Us
 
 # Git
 alias goops="git add --all && git commit -m \"Minor fix for last commit\""
-alias gpa="git push bb && git push bs"
 alias gch="git checkout"
 
 function gac {
