@@ -6,7 +6,13 @@ plugins=(git sublime osx)
 source $ZSH/oh-my-zsh.sh
 
 # General
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/Users/JFlynn/.composer/vendor/bin:$HOME/.node/bin"
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Local Path Additions
+if [ -f '/Users/JFlynn/dotfiles-local/.path' ]
+then
+  source '/Users/JFlynn/dotfiles-local/.path'
+fi
 
 # Git
 alias goops="git add --all && git commit -m \"Minor fix for last commit\""
