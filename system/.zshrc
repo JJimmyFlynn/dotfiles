@@ -27,7 +27,10 @@ function digga() {
   dig +nocmd "$1" any +multiline +noall +answer
 }
 
-
+# Get a Weather Report for Portsmouth
+function weather() {
+  curl http://wttr.in/03801
+}
 # Fast open
 alias o="open ."
 
