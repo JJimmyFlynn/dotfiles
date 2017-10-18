@@ -37,6 +37,12 @@ function digga() {
 function weather() {
   curl http://wttr.in/03801
 }
+
+# Get info about moon phase
+function moon() {
+  curl http://wttr.in/moon
+}
+
 # Fast open
 alias o="open ."
 
