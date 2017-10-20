@@ -66,7 +66,7 @@ alias cr="composer require"
 alias ci="composer install"
 
 # Site Directories
-alias sites='cd ~/sites'
+alias code='cd ~/Code'
 alias desk='cd ~/Desktop'
 
 # Local Aliases
@@ -85,8 +85,5 @@ alias motaro='ssh hostmaster@motaro.catchfirecreative.net'
 alias kano='ssh hostmaster@kano.catchfirecreative.net'
 alias jax='ssh hostmaster@jax.catchfirecreative.net'
 alias kitana='ssh hostmaster@kitana.catchfirecreative.net -p 2222'
-
-# Homestead
-alias homestead='function __homestead() { (cd /Users/JFlynn/Homestead && vagrant $*); unset -f __homestead; }; __homestead'
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
