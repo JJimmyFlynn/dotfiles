@@ -1,8 +1,8 @@
 
 # ZSH
 export ZSH=/Users/JFlynn/.oh-my-zsh
-ZSH_THEME="cobalt2"
-plugins=(git sublime osx)
+ZSH_THEME="materialshell"
+plugins=(git sublime osx zsh-vscode)
 source $ZSH/oh-my-zsh.sh
 
 # General
@@ -66,7 +66,6 @@ alias cr="composer require"
 alias ci="composer install"
 
 # Site Directories
-alias code='cd ~/Code'
 alias desk='cd ~/Desktop'
 
 # Local Aliases
@@ -87,3 +86,4 @@ alias jax='ssh hostmaster@jax.catchfirecreative.net'
 alias kitana='ssh hostmaster@kitana.catchfirecreative.net -p 2222'
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

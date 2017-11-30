@@ -9,7 +9,7 @@ curl -L http://install.ohmyz.sh | sh
 
 # Sym link zsh preferences
 mv $HOME/.zshrc $HOME/.zshrc-old
-ln -s $HOME/dotfiles/system/.zshrc $HOME/.zshrc
+ln -s $HOME/code/dotfiles/system/.zshrc $HOME/.zshrc
 
 # Install Composer
 echo 'Install Composer'
@@ -35,12 +35,6 @@ echo 'Install MariaDB'
 echo '---------------'
 brew install mariadb
 brew services start mariadb
-
-# Install Laravel Valet
-echo 'Install Laravel Valet'
-echo '---------------------'
-composer global require laravel/valet
-valet install
 
 # Install Yarn
 echo 'Install Yarn'
