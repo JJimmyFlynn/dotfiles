@@ -74,16 +74,5 @@ then
   source '/Users/JFlynn/dotfiles-local/.aliases'
 fi
 
-# Servers
-alias raiden='ssh hostmaster@raiden.catchfirecreative.net -p 2222'
-alias jade='ssh hostmaster@jade.catchfirecreative.net -p 2222'
-alias jadecc='ssh catchfirec@jade.catchfirecreative.net -p 2222'
-alias scorpion='ssh hostmaster@scorpion.catchfirecreative.net'
-alias subzero='ssh hostmaster@subzero.catchfirecreative.net -p 2222'
-alias motaro='ssh hostmaster@motaro.catchfirecreative.net'
-alias kano='ssh hostmaster@kano.catchfirecreative.net'
-alias jax='ssh hostmaster@jax.catchfirecreative.net'
-alias kitana='ssh hostmaster@kitana.catchfirecreative.net -p 2222'
-
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
