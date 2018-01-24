@@ -118,9 +118,8 @@ module.exports = {
   plugins: [
     'hyperterm-hipster',
     "hyperterm-tabs",
-    "hyperline",
-    "hyper-alt-click",
-    "hyper-nord"
+    "hyperline#0.6.1",
+    "hyper-alt-click"
   ],
 
   // in development, you can create a directory under
