@@ -1,22 +1,26 @@
 
 # ZSH
-export ZSH=/Users/JFlynn/.oh-my-zsh
-ZSH_THEME="materialshell"
+export ZSH=/Users/johnflynn/.oh-my-zsh
+ZSH_THEME="materialtheme"
 plugins=(git sublime osx zsh-vscode)
 source $ZSH/oh-my-zsh.sh
 
 # General
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="$PATH:$HOME/.composer/vendor/bin"
 
 # Local Path Additions
-if [ -f '/Users/JFlynn/dotfiles-local/.path' ]
+if [ -f '/Users/johnflynn/dotfiles-local/.path' ]
 then
-  source '/Users/JFlynn/dotfiles-local/.path'
+  source '/Users/johnflynn/dotfiles-local/.path'
 fi
 
 # Git
 alias goops="git add --all && git commit -m \"Minor fix for last commit\""
-alias gch="git checkout"
+alias gc="git checkout"
+alias gmc="git checkout master"
+alias gcb="git checkout -b"
+alias gpu="git pull"
 
 function gac {
     git add --all
@@ -69,9 +73,9 @@ alias ci="composer install"
 alias desk='cd ~/Desktop'
 
 # Local Aliases
-if [ -f '/Users/JFlynn/dotfiles-local/.aliases' ]
+if [ -f '/Users/johnflynn/dotfiles-local/.aliases' ]
 then
-  source '/Users/JFlynn/dotfiles-local/.aliases'
+  source '/Users/johnflynn/dotfiles-local/.aliases'
 fi
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
