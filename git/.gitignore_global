@@ -39,3 +39,7 @@ Thumbs.db
 # WordPress Files/Folders #
 ###########################
 /cache
+
+# IDE Data #
+############
+.idea

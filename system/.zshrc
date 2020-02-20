@@ -2,7 +2,7 @@
 # ZSH
 export ZSH=/Users/johnflynn/.oh-my-zsh
 ZSH_THEME="materialtheme"
-plugins=(git sublime osx zsh-vscode)
+plugins=(git sublime osx)
 source $ZSH/oh-my-zsh.sh
 
 # General

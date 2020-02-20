@@ -98,8 +98,7 @@ module.exports = {
     "nord-hyper",
     "hyperterm-tabs",
     "hyper-tab-icons",
-    "hyper-alt-click",
-    "hyperline",
+    "hyper-alt-click"
   ],
 
   // in development, you can create a directory under
