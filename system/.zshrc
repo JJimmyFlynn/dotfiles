@@ -1,13 +1,16 @@
 
 # ZSH
-export ZSH=/Users/johnflynn/.oh-my-zsh
-ZSH_THEME="materialtheme"
+export ZSH="/Users/johnflynn/.oh-my-zsh"
 plugins=(git sublime osx)
 source $ZSH/oh-my-zsh.sh
 
 # General
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$PATH:$HOME/.composer/vendor/bin"
+
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt spaceship
 
 # Local Path Additions
 if [ -f '/Users/johnflynn/dotfiles-local/.path' ]
@@ -21,6 +24,7 @@ alias gc="git checkout"
 alias gmc="git checkout master"
 alias gcb="git checkout -b"
 alias gpu="git pull"
+alias gs="git status -s"
 
 function gac {
     git add --all
@@ -68,6 +72,10 @@ alias art="php artisan"
 alias cu="composer update"
 alias cr="composer require"
 alias ci="composer install"
+alias craft="php craft"
+
+# Node / NPM
+alias run="npm run"
 
 # Site Directories
 alias desk='cd ~/Desktop'
@@ -78,5 +86,4 @@ then
   source '/Users/johnflynn/dotfiles-local/.aliases'
 fi
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
