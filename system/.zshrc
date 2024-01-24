@@ -8,13 +8,14 @@ source $ZSH/oh-my-zsh.sh
 # General
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$PATH:$HOME/.composer/vendor/bin"
+export JF_HOMEBREW_PREFIX=$(brew --prefix)
 MTA_API_KEY=34uuR1Sbdl7utfois9S1H3Cp1jhFFv2W9WQXdH7x
 
 # N Package Manager
 export N_PRESERVE_NPM=1 # Keeps installed NPM version when switching Node versions
 
 # Set Spaceship ZSH as a prompt
-source "/usr/local/opt/spaceship/spaceship.zsh"
+source "$JF_HOMEBREW_PREFIX/opt/spaceship/spaceship.zsh"
 
 # Local Path Additions
 if [ -f '/Users/johnflynn/dotfiles-local/.path' ]
@@ -100,7 +101,7 @@ then
   source '/Users/johnflynn/dotfiles-local/.aliases'
 fi
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $JF_HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # BEGIN SNIPPET: Platform.sh CLI configuration
 HOME=${HOME:-'/Users/johnflynn'}
