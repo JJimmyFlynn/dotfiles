@@ -44,16 +44,6 @@ function mkd() {
   mkdir -p "$@" && cd "$@"
 }
 
-# All the dig info
-function digga() {
-  dig +nocmd "$1" any +multiline +noall +answer
-}
-
-# Get a Weather Report for Portsmouth
-function weather() {
-  curl http://wttr.in/03801
-}
-
 # Get info about moon phase
 function moon() {
   curl http://wttr.in/moon
@@ -86,6 +76,7 @@ alias craft="php craft"
 alias run="npm run"
 
 # Site Directories
+alias c="cd ~/code"
 alias desk='cd ~/Desktop'
 
 # Local Aliases
@@ -95,13 +86,6 @@ then
 fi
 
 source $JF_HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# BEGIN SNIPPET: Platform.sh CLI configuration
-HOME=${HOME:-'/Users/johnflynn'}
-export PATH="$HOME/"'.platformsh/bin':"$PATH"
-if [ -f "$HOME/"'.platformsh/shell-config.rc' ]; then . "$HOME/"'.platformsh/shell-config.rc'; fi # END SNIPPET
-
-export PATH=$PATH:/Users/johnflynn/.spicetify
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
