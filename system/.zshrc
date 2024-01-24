@@ -1,16 +1,20 @@
-
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # ZSH
 export ZSH="/Users/johnflynn/.oh-my-zsh"
-plugins=(git sublime osx)
+plugins=(git sublime macos)
 source $ZSH/oh-my-zsh.sh
 
 # General
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$PATH:$HOME/.composer/vendor/bin"
+MTA_API_KEY=34uuR1Sbdl7utfois9S1H3Cp1jhFFv2W9WQXdH7x
+
+# N Package Manager
+export N_PRESERVE_NPM=1 # Keeps installed NPM version when switching Node versions
 
 # Set Spaceship ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt spaceship
+source "/usr/local/opt/spaceship/spaceship.zsh"
 
 # Local Path Additions
 if [ -f '/Users/johnflynn/dotfiles-local/.path' ]
@@ -51,6 +55,12 @@ function moon() {
   curl http://wttr.in/moon
 }
 
+# MTA Train Info
+function gates() {
+  underground stops J --api-key 34uuR1Sbdl7utfois9S1H3Cp1jhFFv2W9WQXdH7x | grep J30S | sed "s/J30S/Manhattan Bound/"
+  underground stops J --api-key 34uuR1Sbdl7utfois9S1H3Cp1jhFFv2W9WQXdH7x | grep J30N | sed "s/J30N/Queens Bound/"
+}
+
 # Fast open
 alias o="open ."
 
@@ -87,3 +97,13 @@ then
 fi
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# BEGIN SNIPPET: Platform.sh CLI configuration
+HOME=${HOME:-'/Users/johnflynn'}
+export PATH="$HOME/"'.platformsh/bin':"$PATH"
+if [ -f "$HOME/"'.platformsh/shell-config.rc' ]; then . "$HOME/"'.platformsh/shell-config.rc'; fi # END SNIPPET
+
+export PATH=$PATH:/Users/johnflynn/.spicetify
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
