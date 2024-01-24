@@ -22,6 +22,10 @@ then
   source '/Users/johnflynn/dotfiles-local/.path'
 fi
 
+# Make Jetbrains terminals use natural keyboard shortcuts for go to start/end of line
+bindkey "\e\eOD" beginning-of-line
+bindkey "\e\eOC" end-of-line
+
 # Git
 alias goops="git add --all && git commit -m \"Minor fix for last commit\""
 alias gc="git checkout"
