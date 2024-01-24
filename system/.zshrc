@@ -9,7 +9,6 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 export JF_HOMEBREW_PREFIX=$(brew --prefix)
-MTA_API_KEY=34uuR1Sbdl7utfois9S1H3Cp1jhFFv2W9WQXdH7x
 
 # N Package Manager
 export N_PRESERVE_NPM=1 # Keeps installed NPM version when switching Node versions
@@ -58,12 +57,6 @@ function weather() {
 # Get info about moon phase
 function moon() {
   curl http://wttr.in/moon
-}
-
-# MTA Train Info
-function gates() {
-  underground stops J --api-key 34uuR1Sbdl7utfois9S1H3Cp1jhFFv2W9WQXdH7x | grep J30S | sed "s/J30S/Manhattan Bound/"
-  underground stops J --api-key 34uuR1Sbdl7utfois9S1H3Cp1jhFFv2W9WQXdH7x | grep J30N | sed "s/J30N/Queens Bound/"
 }
 
 # Fast open
