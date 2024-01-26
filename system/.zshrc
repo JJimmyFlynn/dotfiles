@@ -14,7 +14,7 @@ export JF_HOMEBREW_PREFIX=$(brew --prefix)
 export N_PRESERVE_NPM=1 # Keeps installed NPM version when switching Node versions
 
 # Set Spaceship ZSH as a prompt
-source "$JF_HOMEBREW_PREFIX/opt/spaceship/spaceship.zsh"
+#source "$JF_HOMEBREW_PREFIX/opt/spaceship/spaceship.zsh"
 
 # Local Path Additions
 if [ -f '/Users/johnflynn/dotfiles-local/.path' ]
@@ -86,6 +86,8 @@ then
 fi
 
 source $JF_HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+eval "$(starship init zsh)"
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
