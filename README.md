@@ -7,7 +7,7 @@ This repo contains the dotfiles for my system which are managed by [Stow](https:
 Ensure you have Stow installed on your system
 
 ```
-$ brew install stow
+brew install stow
 ```
 
 ## Installation
@@ -15,12 +15,12 @@ $ brew install stow
 First, check out the dotfiles repo in your $HOME directory using git
 
 ```
-$ git clone git@github.com/jjimmyflynn/dotfiles.git
-$ cd dotfiles
+git clone git@github.com/jjimmyflynn/dotfiles.git
+cd dotfiles
 ```
 
 then use `stow` to create symlinks
 
 ```
-$ stow .
+stow .
 ```
