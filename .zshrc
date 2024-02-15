@@ -13,15 +13,6 @@ export JF_HOMEBREW_PREFIX=$(brew --prefix)
 # N Package Manager
 export N_PRESERVE_NPM=1 # Keeps installed NPM version when switching Node versions
 
-# Set Spaceship ZSH as a prompt
-#source "$JF_HOMEBREW_PREFIX/opt/spaceship/spaceship.zsh"
-
-# Local Path Additions
-if [ -f '/Users/johnflynn/dotfiles-local/.path' ]
-then
-  source '/Users/johnflynn/dotfiles-local/.path'
-fi
-
 # Make Jetbrains terminals use natural keyboard shortcuts for go to start/end of line
 bindkey "\e\eOD" beginning-of-line
 bindkey "\e\eOC" end-of-line
@@ -88,6 +79,10 @@ fi
 source $JF_HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 eval "$(starship init zsh)"
+
+if command -v zoxide &>/dev/null; then
+    eval "$(zoxide init --cmd cd zsh)"
+fi
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
