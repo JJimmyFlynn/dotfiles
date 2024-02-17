@@ -17,13 +17,16 @@ export N_PRESERVE_NPM=1 # Keeps installed NPM version when switching Node versio
 bindkey "\e\eOD" beginning-of-line
 bindkey "\e\eOC" end-of-line
 
-# Git
+# Aliases
 alias goops="git add --all && git commit -m \"Minor fix for last commit\""
 alias gc="git checkout"
 alias gmc="git checkout master"
 alias gcb="git checkout -b"
 alias gpu="git pull"
 alias gs="git status -s"
+
+
+
 
 function gac {
     git add --all
@@ -68,13 +71,6 @@ alias run="npm run"
 
 # Site Directories
 alias c="cd ~/code"
-alias desk='cd ~/Desktop'
-
-# Local Aliases
-if [ -f '/Users/johnflynn/dotfiles-local/.aliases' ]
-then
-  source '/Users/johnflynn/dotfiles-local/.aliases'
-fi
 
 source $JF_HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -82,6 +78,10 @@ eval "$(starship init zsh)"
 
 if command -v zoxide &>/dev/null; then
     eval "$(zoxide init --cmd cd zsh)"
+fi
+
+if command -v bat &>/dev/null; then
+    alias cat="bat --paging=never --theme=Nord"
 fi
 
 # Fig post block. Keep at the bottom of this file.
