@@ -1,13 +1,21 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
+
+# ~~~~~~~~~~~~~~~ Path ~~~~~~~~~~~~~~~~~~~~~~~~
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="$PATH:$HOME/.composer/vendor/bin"
+
+# ~~~~~~~~~~~~~~~ General ~~~~~~~~~~~~~~~~~~~~~~~~
 # ZSH
 export ZSH="/Users/johnflynn/.oh-my-zsh"
 plugins=(git sublime macos)
 source $ZSH/oh-my-zsh.sh
+source $JF_HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# General
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="$PATH:$HOME/.composer/vendor/bin"
+# Starship Primpt
+eval "$(starship init zsh)"
+
+# Homebrew
 export JF_HOMEBREW_PREFIX=$(brew --prefix)
 
 # N Package Manager
@@ -17,32 +25,7 @@ export N_PRESERVE_NPM=1 # Keeps installed NPM version when switching Node versio
 bindkey "\e\eOD" beginning-of-line
 bindkey "\e\eOC" end-of-line
 
-# Aliases
-alias goops="git add --all && git commit -m \"Minor fix for last commit\""
-alias gc="git checkout"
-alias gmc="git checkout master"
-alias gcb="git checkout -b"
-alias gpu="git pull"
-alias gs="git status -s"
-
-
-
-
-function gac {
-    git add --all
-    git commit -m $1
-}
-
-# Create a new directory and enter it
-function mkd() {
-  mkdir -p "$@" && cd "$@"
-}
-
-# Get info about moon phase
-function moon() {
-  curl http://wttr.in/moon
-}
-
+# ~~~~~~~~~~~~~~~ Aliases ~~~~~~~~~~~~~~~~~~~~~~~~
 # Fast open
 alias o="open ."
 
@@ -59,6 +42,14 @@ alias sudo='sudo '
 # Also, clear Apple’s System Logs to improve shell startup speed
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 
+# Git
+alias goops="git add --all && git commit -m \"Minor fix for last commit\""
+alias gc="git checkout"
+alias gmc="git checkout master"
+alias gcb="git checkout -b"
+alias gpu="git pull"
+alias gs="git status -s"
+
 # PHP
 alias art="php artisan"
 alias cu="composer update"
@@ -69,13 +60,23 @@ alias craft="php craft"
 # Node / NPM
 alias run="npm run"
 
-# Site Directories
-alias c="cd ~/code"
+# ~~~~~~~~~~~~~~~ Functions ~~~~~~~~~~~~~~~~~~~~~~~~
+function gac {
+    git add --all
+    git commit -m $1
+}
 
-source $JF_HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Create a new directory and enter it
+function mkd() {
+  mkdir -p "$@" && cd "$@"
+}
 
-eval "$(starship init zsh)"
+# Get info about moon phase
+function moon() {
+  curl http://wttr.in/moon
+}
 
+# ~~~~~~~~~~~~~~~ Builtins Overrdes ~~~~~~~~~~~~~~~~~~~~~~~~
 if command -v zoxide &>/dev/null; then
     eval "$(zoxide init --cmd cd zsh)"
 fi
