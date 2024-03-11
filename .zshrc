@@ -6,6 +6,9 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 
 # ~~~~~~~~~~~~~~~ General ~~~~~~~~~~~~~~~~~~~~~~~~
+# Homebrew
+export JF_HOMEBREW_PREFIX=$(brew --prefix)
+
 # ZSH
 export ZSH="/Users/johnflynn/.oh-my-zsh"
 plugins=(git sublime macos)
@@ -15,8 +18,6 @@ source $JF_HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting
 # Starship Primpt
 eval "$(starship init zsh)"
 
-# Homebrew
-export JF_HOMEBREW_PREFIX=$(brew --prefix)
 
 # N Package Manager
 export N_PRESERVE_NPM=1 # Keeps installed NPM version when switching Node versions
