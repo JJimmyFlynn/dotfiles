@@ -1,7 +1,7 @@
 # Amazon Q pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 # ~~~~~~~~~~~~~~~ Path ~~~~~~~~~~~~~~~~~~~~~~~~
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/Users/johnflynn/.local/bin:$PATH
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 
 # ~~~~~~~~~~~~~~~ General ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -9,9 +9,9 @@ export PATH="$PATH:$HOME/.composer/vendor/bin"
 export JF_HOMEBREW_PREFIX=$(brew --prefix)
 
 # ZSH
-export ZSH="/Users/johnflynn/.oh-my-zsh"
-plugins=(git sublime macos)
-source $ZSH/oh-my-zsh.sh
+# export ZSH="/Users/johnflynn/.oh-my-zsh"
+# plugins=(macos)
+# source $ZSH/oh-my-zsh.sh
 source $JF_HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Starship Primpt
