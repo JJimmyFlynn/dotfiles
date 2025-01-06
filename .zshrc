@@ -9,9 +9,9 @@ export PATH="$PATH:$HOME/.composer/vendor/bin"
 export JF_HOMEBREW_PREFIX=$(brew --prefix)
 
 # ZSH
-# export ZSH="/Users/johnflynn/.oh-my-zsh"
+ export ZSH="/Users/johnflynn/.oh-my-zsh"
 # plugins=(macos)
-# source $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
 source $JF_HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Starship Primpt
