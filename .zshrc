@@ -85,5 +85,9 @@ if command -v bat &>/dev/null; then
     alias cat="bat --paging=never --theme=Nord"
 fi
 
+# Open Tofu autocomplete
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/tofu tofu
+
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
